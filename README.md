@@ -8,7 +8,7 @@ SESエンジニアと案件をマッチングするWebアプリです。
 
 （※後でデプロイしたURLを記載）
 
-https://xxxxxx.com
+
 🛠 技術スタック
 フロントエンド
 Alpine.js
