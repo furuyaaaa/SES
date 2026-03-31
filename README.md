@@ -8,7 +8,6 @@ SESエンジニアと案件をマッチングするWebアプリです。
 
 （※後でデプロイしたURLを記載）
 
-
 🛠 技術スタック
 フロントエンド
 Alpine.js
@@ -73,7 +72,7 @@ S3にファイルアップロード
 通知機能の強化
 UI/UX改善
 👤 作者
-GitHub: https://github.comhttps:/furuyaaaa
+GitHub: https://github.com/furuyaaaa
 📄 ライセンス
 
 MIT License
