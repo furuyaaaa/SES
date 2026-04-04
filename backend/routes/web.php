@@ -1,7 +1,19 @@
 <?php
-use App\Http\Controllers\EngineerController;
 
-Route::get('/engineers', [EngineerController::class, 'index'])->name('engineers.index');
-Route::get('/engineers/create', [EngineerController::class, 'create'])->name('engineers.create');
-Route::post('/engineers', [EngineerController::class, 'store'])->name('engineers.store');
-;
+use App\Http\Controllers\EngineerController;
+use App\Http\Controllers\ProfileController;
+use Illuminate\Support\Facades\Route;
+
+Route::redirect('/', '/engineers');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/dashboard', fn () => redirect()->route('engineers.index'))->name('dashboard');
+
+    Route::resource('engineers', EngineerController::class);
+
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+require __DIR__ . '/auth.php';
